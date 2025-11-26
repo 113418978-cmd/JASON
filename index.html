@@ -162,11 +162,12 @@ async function loadUser() {
     document.getElementById('userName').textContent = data.username;
     document.getElementById('userBalance').textContent = data.balance;
     if (data.is_admin || data.username === 'admin') {
-      document.getElementById('admin').style.display = '';
-    } else {
-      document.getElementById('admin').style.display = 'none';
-    } 
-    await loadHorses();
+    document.getElementById('admin').style.display = '';
+} else {
+    document.getElementById('admin').style.display = 'none';
+}
+
+await loadHorses();
   } catch (err) {
     alert('无法获取用户信息');
   }
